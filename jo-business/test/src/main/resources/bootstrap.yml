@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: test
+  cloud:
+    nacos:
+      server-addr: 192.168.3.144:8848
+      discovery: #nacos注册中心配置
+        namespace: 8e0541c4-f0f4-4af4-97f8-50ca0945742c
+        group: A_GROUP
+        service: ${spring.application.name}
+      config:  #nacos配置中心配置
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        group: A_GROUP
+        prefix: ${spring.application.name}
+        file-extension: yml
+  profiles:
+    active: dev  # 多环境配置
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.3.144:3306/takeout?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: 123456
+    redis:
+      host: 192.168.3.144
+      port: 6379
+      password: 123456
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher #指定路径配置策略
+      format: # 接收日期参数格式
+        date: yyyy-MM-dd HH:mm:ss
+    jackson: # springmvc中设置响应日期格式
+      date-format: yyyy-MM-dd HH:mm:ss
+      time-zone: GMT+8
+
+minio:
+  endpoint: http://192.168.3.144:9001
+  accessKey: minio
+  secretKey: 12345678
+  bucket: takeout
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 日志输出
+

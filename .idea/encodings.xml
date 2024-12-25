@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/cloud-iaas/auth-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-iaas/gateway-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jo-business/admin-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jo-business/customer-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jo-business/merchant-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jo-business/test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jo-common/common-base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jo-common/common-core/src/main/java" charset="UTF-8" />
+  </component>
+</project>

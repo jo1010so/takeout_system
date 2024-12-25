@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jojo.mapper.BusinesslicenseMapper">
+
+    <resultMap id="BaseResultMap" type="com.jojo.domain.Businesslicense">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="idNo" column="id_no" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="licenseUrl" column="license_url" jdbcType="VARCHAR"/>
+            <result property="bucket" column="bucket" jdbcType="VARCHAR"/>
+            <result property="object" column="object" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,id_no,name,
+        license_url,bucket,object
+    </sql>
+</mapper>

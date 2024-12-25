@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jojo.mapper.FeedbackMapper">
+
+    <resultMap id="BaseResultMap" type="com.jojo.domain.Feedback">
+            <id property="orderId" column="order_id" jdbcType="INTEGER"/>
+            <result property="rating" column="rating" jdbcType="INTEGER"/>
+            <result property="merchantReview" column="merchant_review" jdbcType="VARCHAR"/>
+            <result property="deliveryManReview" column="delivery_man_review" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        order_id,rating,merchant_review,
+        delivery_man_review
+    </sql>
+</mapper>

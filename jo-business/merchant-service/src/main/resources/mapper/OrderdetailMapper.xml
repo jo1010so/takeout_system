@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jojo.mapper.OrderdetailMapper">
+
+    <resultMap id="BaseResultMap" type="com.jojo.domain.Orderdetail">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="orderId" column="order_id" jdbcType="INTEGER"/>
+            <result property="dishId" column="dish_id" jdbcType="INTEGER"/>
+            <result property="number" column="number" jdbcType="INTEGER"/>
+            <result property="extendPrice" column="extend_price" jdbcType="DECIMAL"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,order_id,dish_id,
+        number,extend_price
+    </sql>
+</mapper>

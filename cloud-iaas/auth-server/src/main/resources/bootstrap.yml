@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: auth-server
+  cloud:
+    nacos:
+      server-addr: 192.168.3.144:8848
+      discovery:
+        namespace: 8e0541c4-f0f4-4af4-97f8-50ca0945742c
+        group: A_GROUP
+        service: ${spring.application.name}
+      config:
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        group: ${spring.cloud.nacos.discovery.group}
+        prefix: ${spring.application.name}
+        file-extension: yml
+        shared-configs: #配置共享配置文件
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+  profiles:
+    active: dev
+
+#################  nacos远程配置文件  ##################
+#server:
+#  port: 8500
+
+#################  nacos远程配置中心，项目公共配置文件内容   ##################
+#spring:
+#  datasource:
+#    druid:
+#      driver: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://192.168.3.144:3306/teaching-plan?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+#      username: root
+#      password: 123456
+#  redis:
+#    host: 192.168.3.144
+#    port: 6379
+#    password: 123456
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ant_path_matcher #指定路径配置策略
+#    format:  # 接收日期参数格式
+#      date: yyyy-MM-dd HH:mm:ss
+#  jackson:  # springmvc中设置响应日期格式
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 日志输出
+#  mapper-locations: classpath*:/mapper/**/*.xml

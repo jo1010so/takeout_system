@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jojo.mapper.DeliveryMapper">
+
+    <resultMap id="BaseResultMap" type="com.jojo.domain.Delivery">
+            <id property="deliverymanId" column="deliveryman_id" jdbcType="INTEGER"/>
+            <id property="orderId" column="order_id" jdbcType="INTEGER"/>
+            <result property="arrivalTime" column="arrival_time" jdbcType="TIMESTAMP"/>
+            <result property="deliveryAmount" column="delivery_amount" jdbcType="DECIMAL"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        deliveryman_id,order_id,arrival_time,
+        delivery_amount
+    </sql>
+</mapper>

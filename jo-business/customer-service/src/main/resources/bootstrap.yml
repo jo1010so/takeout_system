@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: customer-service
+  cloud:
+    nacos:
+      server-addr: 192.168.3.144:8848
+      discovery:
+        namespace: 8e0541c4-f0f4-4af4-97f8-50ca0945742c
+        group: A_GROUP
+        service: ${spring.application.name}
+      config:
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        group: ${spring.cloud.nacos.discovery.group}
+        prefix: ${spring.application.name}
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+  profiles:
+    active: dev

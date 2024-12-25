@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jojo.mapper.DishMapper">
+
+    <resultMap id="BaseResultMap" type="com.jojo.domain.Dish">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="merchantId" column="merchant_id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="price" column="price" jdbcType="DECIMAL"/>
+            <result property="imgUrl" column="img_url" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="discount" column="discount" jdbcType="DECIMAL"/>
+            <result property="categoryId" column="category_id" jdbcType="INTEGER"/>
+            <result property="bucket" column="bucket" jdbcType="VARCHAR"/>
+            <result property="object" column="object" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,merchant_id,name,
+        description,price,img_url,
+        status,discount,category_id,
+        bucket,object
+    </sql>
+</mapper>
